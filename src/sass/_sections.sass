@@ -1,0 +1,404 @@
+nav > ul
+	display: flex
+
+.Brand
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	z-index: 18
+	height: 100%
+	a
+		margin: 0 auto
+		height: 160px
+		width: 150px
+		background-image: url('../img/Logo_Preto.png')
+		background-repeat: no-repeat
+		background-position: center
+		background-size: contain
+		display: block
+		color: transparent
+		text-indent: 9999px
+		transform: scale(.5)
+		transform-origin: top center
+		@media screen and (min-width: $sm) 
+			transform: scale(.65)
+			background-image: url('../img/Logo_Branco.png')
+		@media screen and (min-width: $md) 
+			transform: scale(.8)
+		@media screen and (min-width: $lg) 
+			transform: scale(1)
+	h1
+		margin: 0
+		display: none
+
+.MenuHamburger
+	z-index: 19
+	width: 40px
+	height: 40px
+	position: relative
+	cursor: pointer
+	.HamburgerIcon,
+	.HamburgerIcon:after,
+	.HamburgerIcon:before
+		transition: all ease .3s
+		display: inline-block
+		height: 2px
+		width: 30px
+		background-color: $colorBlack2
+	.HamburgerIcon
+		&:after,
+		&:before
+			content: ''
+			position: absolute
+			left: 0
+			transform-origin: 4px
+		&:after
+			bottom: 11px
+		&:before
+			top: 11px
+	&.Opened
+		.HamburgerIcon
+			background-color: transparent
+			&:after
+				transform: rotate(-45deg)
+			&:before
+				transform: rotate(45deg)
+
+.NavigationMenu
+	z-index: 19
+	li 
+		> a
+			cursor: pointer
+			font-family: $fontDefault
+			letter-spacing: 0.05em
+			text-decoration: none
+			text-transform: uppercase
+			display: inline-block
+			line-height: 30px
+			transition: all ease .3s
+			font-size: 10px
+			margin: 0 .5em
+			color: $colorBlack2
+			@media screen and (min-width: $sm) 
+				font-size: 10px
+				color: white
+				border-bottom: 2px solid transparent
+			@media screen and (min-width: $md) 
+				font-size: 12px
+				margin: 0 1em
+			@media screen and (min-width: $lg) 
+				font-size: 13px
+			&:hover:not(.CartLink)
+				color: $colorBlack2
+				border-color: $colorBlack2
+		&.NavigationSubmenu a:after
+			content: ''
+			display: inline-block
+			width: 1.5em
+			height: 1.5em
+			background-image: url('../img/chevron-down-white.svg')
+			background-repeat: no-repeat
+			background-position: center
+			background-size: contain
+			position: relative
+			top: 4px
+			transition: transform ease .3s
+		&.Active a:after
+			transform: rotate(180deg)
+		&.Cart
+			.CartQuantify
+				position: relative
+				top: -2px
+				text-align: center
+				display: inline-block
+				background-color: $colorBlack2
+				color: white
+				line-height: 20px
+				width: 20px
+				border-radius: 2px
+				font-weight: bold
+				font-size: 12px
+.Navigation,
+.Navigation:before
+	height: 85px
+	@media screen and (min-width: $sm) 
+		height: 105px
+	@media screen and (min-width: $md) 
+		height: 135px
+	@media screen and (min-width: $lg) 
+		height: 155px
+.Navigation
+	position: fixed
+	top: 0
+	left: 0
+	display: block
+	width: 100vw
+	z-index: 20
+	transition: transform ease .3s
+	.NavigationWrapper
+		height: 100%
+		padding: 0 15px
+		@media screen and (min-width: $sm) 
+			padding: 0 35px
+	&:before
+		content: ''
+		display: block
+		width: 100%
+		position: absolute
+		top: 0
+		left: 0
+		background-color: white
+		z-index: 18
+		transition: all ease .3s
+		box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.1)
+		opacity: 1
+		@media screen and (min-width: $sm)
+			opacity: 0
+	&.ScrollOnTop:hover,
+	&.Opened
+		&:before
+			opacity: 1
+		.NavigationMenu li 
+			> a
+				color: $colorBlack2
+			&.NavigationSubmenu a:after
+				background-image: url('../img/chevron-down.svg')
+
+		.Brand a
+			background-image: url('../img/Logo_Preto.png')
+	&:not(.ScrollOnTop)
+		height: 50px
+		@media screen and (min-width: $sm) 
+			height: 60px
+		@media screen and (min-width: $md) 
+			height: 80px
+		@media screen and (min-width: $lg) 
+			height: 90px
+		&:before
+			opacity: 1
+			transform: translateY(-35px)
+			@media screen and (min-width: $sm) 
+				transform: translateY(-45px)
+			@media screen and (min-width: $md) 
+				transform: translateY(-55px)
+			@media screen and (min-width: $lg) 
+				transform: translateY(-65px)
+		.NavigationMenu li 
+			> a
+				color: $colorBlack2
+			&.NavigationSubmenu a:after
+				background-image: url('../img/chevron-down.svg')
+		.Brand a
+			height: 90px
+			background-image: url('../img/Logo_Preto_Reduzido.png')
+	&.ScrollDown
+		@media screen and (max-width: $sm - 1px)
+			transform: translateY(-80px)
+
+	.NavigationSubLayer
+		z-index: 17
+		background-color: #EEE
+		position: fixed
+		left: 0
+		top: 0
+		width: 100%
+		transform: translateY(-100vh)
+		transform-origin: top
+		transition: transform ease .5s
+		max-height: 70vh
+		min-height: 450px
+		.NavigationMenu:not(.Active)
+			display: none
+		.SubMenuProducts
+			max-width: 200px
+			margin: 0 15px
+			a
+				display: flex
+				flex-direction: column
+				justify-content: space-between
+				height: 100%
+				line-height: 1.5em
+				h3
+					margin: 10px 0 0
+	&.Opened
+		.NavigationSubLayer
+			transform: translateY(0)
+			@media screen and (min-width: $lg)
+				transform: translateY(50px)
+		&.ScrollOnTop .NavigationSubLayer
+			transform: translateY(50px)
+			@media screen and (min-width: $lg)
+				transform: translateY(100px)
+		&.Reopen
+			.NavigationSubLayer
+				transform: scaleY(.1)
+				transition: transform ease-in .4s
+	.NavigationLightBox.Active
+		content: ''
+		display: block
+		position: fixed
+		width: 100vw
+		height: 100vh
+		background-color: rgba(0,0,0,.5)
+		z-index: 16
+
+.Header
+	position: relative
+	background-image: url('../img/hero.jpg')
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: center
+	background-color: black
+	width: 100%
+	height: calc(100vh - 40px)
+	margin: 0
+	display: flex
+	justify-content: center
+	align-items: center
+	color: white
+	.HeaderWrapper
+		max-width: 80%
+	.HeaderTitle
+		margin-top: 2em
+		font-family: 'AkhandSoft'
+		text-transform: uppercase
+		line-height: 1.2em
+		letter-spacing: 0.14em
+		font-size: 38px
+		@media screen and (min-width: $sm) 
+			font-size: 42px
+		@media screen and (min-width: $md) 
+			font-size: 52px
+		@media screen and (min-width: $lg) 
+			font-size: 72px
+		
+	.ButtonScrollDown
+		position: absolute
+		bottom: -20px
+		.Icon
+			background-color: white
+			cursor: pointer
+			height: 40px
+			width: 40px
+			border-radius: 50%
+
+body
+	color: $colorBlack2
+	font-size: 14px
+
+.SubMenu 
+	ul
+		justify-content: center
+		li
+			margin: 0 10px
+			max-width: 45%
+			a
+				text-transform: uppercase
+				color: white
+				font-family: $fontDefault
+				font-weight: normal
+				text-decoration: none
+				font-size: 16px
+				line-height: 1em
+				padding: 10px
+				display: inline-block
+				width: 200px
+				max-width: 100%
+				transition: color ease .3s
+				position: relative
+				z-index: 1
+				> *
+					font-size: 16px
+					font-weight: normal
+					margin: 0
+				&:before
+					position: absolute
+					bottom: 0
+					left: 0
+					content: ''
+					width: 200px
+					max-width: 100%
+					height: 2px
+					background-color: white
+					display: inline-block
+					transition: transform ease .3s
+					z-index: -1
+					transform-origin: bottom
+				&:hover
+					color: $colorBlack2
+					&:before
+						transform: scaleY(18)
+
+.SectionMosaic
+	max-width: 100%
+	.Row
+		width: 100%
+		@media screen and (min-width: $xs)
+			padding-right: 35px
+			padding-left: 35px
+		.Column
+			display: flex
+			flex-wrap: wrap
+			@media screen and (min-width: $sm)
+				width: 50%
+			.BigBox
+				width: 100%
+				position: relative
+				top: 0
+				left: 0
+				height: fit-content
+				margin-bottom: -5px
+			.ContentWrapper
+				width: 100%
+				height: 100%
+				position: absolute
+				top: 0
+				left: 0
+				transform: scale(.7)
+				@media screen and (min-width: $md) 
+					transform: scale(.9)
+				@media screen and (min-width: $lg) 
+					transform: scale(1)
+				.Content
+					max-width: 400px
+			.SmallBox
+				width: 50%
+				margin-bottom: -5px
+	h2
+		margin-top: 0
+		font-size: 40px
+		color: white
+
+.SectionGrid
+	font-size: 18px
+	color: $colorBlack2
+	ul
+		max-width: $sm
+		@media screen and (max-width: $xs - 1px)
+			flex-wrap: wrap
+			li
+				width: 50%
+		li
+			transform: scale(.7)
+			@media screen and (min-width: $sm)
+				transform: scale(1)
+		img
+			height: 80px
+			width: auto
+
+.BannerContentText
+	position: relative
+  height: min-content
+	margin-bottom: -5px
+	.ContentWrapper
+		text-decoration: none
+		position: absolute
+		top: 0
+		left: 0
+		height: 100%
+		width: 100%
+
+.SectionBanners
+	@media screen and (min-width: $xs)
+		display: flex

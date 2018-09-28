@@ -1,0 +1,839 @@
+/**
+ * 1. Change the default font family in all browsers (opinionated).
+ * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
+ */
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+body {
+  margin: 0; }
+
+* {
+  box-sizing: border-box; }
+
+/* HTML5 display definitions
+   @mixin ========================================================================= */
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+  display: block; }
+
+/**
+ * Add the correct display in IE 9-.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; }
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline; }
+
+/**
+ * Add the correct display in IE 10-.
+ * 1. Add the correct display in IE.
+ */
+[hidden] {
+  display: none; }
+
+/* Links
+   @mixin ========================================================================= */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects; }
+
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers (opinionated).
+ */
+a:active, a:hover {
+  outline-width: 0; }
+
+/* Text-level semantics
+   @mixin ========================================================================= */
+/**
+ * 1. Remove the bottom border in Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted; }
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+b, strong {
+  font-weight: inherit; }
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b, strong {
+  font-weight: bolder; }
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+mark {
+  background-color: #ff0;
+  color: #000; }
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+   @mixin ========================================================================= */
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+img {
+  border-style: none; }
+
+/**
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   @mixin ========================================================================= */
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code, kbd, pre, samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/**
+ * Add the correct margin in IE 8.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible; }
+
+/* Forms
+   @mixin ========================================================================= */
+/**
+ * 1. Change font properties to `inherit` in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button, input, select, textarea {
+  font: inherit;
+  margin: 0; }
+
+/**
+ * Restore the font weight unset by the previous rule.
+ */
+optgroup {
+  font-weight: bold; }
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button, input {
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button, select {
+  text-transform: none; }
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+button, html [type="button"], [type="reset"], [type="submit"] {
+  -webkit-appearance: button; }
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+ * Change the border, margin, and padding in all browsers (opinionated).
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal; }
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+[type="checkbox"], [type="radio"] {
+  box-sizing: border-box;
+  padding: 0; }
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px; }
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.
+ */
+[type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ */
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54; }
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit; }
+
+.Container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto; }
+
+.Section {
+  padding-top: 40px;
+  padding-bottom: 40px; }
+  @media screen and (min-width: 768px) {
+    .Section {
+      padding-top: 80px;
+      padding-bottom: 80px; } }
+
+@media screen and (min-width: 768px) {
+  .Row {
+    display: flex; } }
+
+@font-face {
+  font-family: 'AkhandSoft';
+  src: url(../fonts/AkhandSoft-Bold.woff2) format("woff2"); }
+
+.FontDisplay {
+  font-family: 'AkhandSoft'; }
+
+.TextUppercase {
+  text-transform: uppercase; }
+
+.TextBig {
+  font-size: 20px;
+  line-height: 1.4em;
+  font-weight: 300;
+  letter-spacing: 0.03em; }
+
+.TextCenter {
+  text-align: center; }
+
+.ColorWhite {
+  color: white; }
+
+body {
+  font-family: "Nunito"; }
+
+img {
+  max-width: 100%; }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.Flex {
+  display: flex; }
+
+.FlexStart {
+  justify-content: flex-start; }
+
+.FlexEnd {
+  justify-content: flex-end; }
+
+.AICenter {
+  align-items: center; }
+
+.JCCenter {
+  justify-content: center; }
+
+.JCSpaceBetween {
+  justify-content: space-between; }
+
+.PH35 {
+  padding-right: 25px;
+  padding-left: 25px; }
+  @media screen and (min-width: 768px) {
+    .PH35 {
+      padding-right: 35px;
+      padding-left: 35px; } }
+
+.P35 {
+  padding: 25px; }
+  @media screen and (min-width: 768px) {
+    .P35 {
+      padding: 35px; } }
+
+.M0 {
+  margin: 0; }
+
+.FS40 {
+  font-size: 25px; }
+  @media screen and (min-width: 768px) {
+    .FS40 {
+      font-size: 40px; } }
+
+@media screen and (max-width: 767px) {
+  .HideMobile {
+    display: none; } }
+
+@media screen and (min-width: 768px) {
+  .HideDesktop {
+    display: none; } }
+
+.LazyLoading {
+  transition: all ease-out .5s;
+  transition-delay: .25s; }
+  .LazyLoading.Loading {
+    transform: translateY(50px);
+    opacity: 0; }
+
+nav > ul {
+  display: flex; }
+
+.Brand {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 18;
+  height: 100%; }
+  .Brand a {
+    margin: 0 auto;
+    height: 160px;
+    width: 150px;
+    background-image: url("../img/Logo_Preto.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: block;
+    color: transparent;
+    text-indent: 9999px;
+    transform: scale(0.5);
+    transform-origin: top center; }
+    @media screen and (min-width: 768px) {
+      .Brand a {
+        transform: scale(0.65);
+        background-image: url("../img/Logo_Branco.png"); } }
+    @media screen and (min-width: 992px) {
+      .Brand a {
+        transform: scale(0.8); } }
+    @media screen and (min-width: 1200px) {
+      .Brand a {
+        transform: scale(1); } }
+  .Brand h1 {
+    margin: 0;
+    display: none; }
+
+.MenuHamburger {
+  z-index: 19;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  cursor: pointer; }
+  .MenuHamburger .HamburgerIcon,
+  .MenuHamburger .HamburgerIcon:after,
+  .MenuHamburger .HamburgerIcon:before {
+    transition: all ease .3s;
+    display: inline-block;
+    height: 2px;
+    width: 30px;
+    background-color: #212121; }
+  .MenuHamburger .HamburgerIcon:after, .MenuHamburger .HamburgerIcon:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    transform-origin: 4px; }
+  .MenuHamburger .HamburgerIcon:after {
+    bottom: 11px; }
+  .MenuHamburger .HamburgerIcon:before {
+    top: 11px; }
+  .MenuHamburger.Opened .HamburgerIcon {
+    background-color: transparent; }
+    .MenuHamburger.Opened .HamburgerIcon:after {
+      transform: rotate(-45deg); }
+    .MenuHamburger.Opened .HamburgerIcon:before {
+      transform: rotate(45deg); }
+
+.NavigationMenu {
+  z-index: 19; }
+  .NavigationMenu li > a {
+    cursor: pointer;
+    font-family: "Nunito";
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    line-height: 30px;
+    transition: all ease .3s;
+    font-size: 10px;
+    margin: 0 .5em;
+    color: #212121; }
+    @media screen and (min-width: 768px) {
+      .NavigationMenu li > a {
+        font-size: 10px;
+        color: white;
+        border-bottom: 2px solid transparent; } }
+    @media screen and (min-width: 992px) {
+      .NavigationMenu li > a {
+        font-size: 12px;
+        margin: 0 1em; } }
+    @media screen and (min-width: 1200px) {
+      .NavigationMenu li > a {
+        font-size: 13px; } }
+    .NavigationMenu li > a:hover:not(.CartLink) {
+      color: #212121;
+      border-color: #212121; }
+  .NavigationMenu li.NavigationSubmenu a:after {
+    content: '';
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    background-image: url("../img/chevron-down-white.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: relative;
+    top: 4px;
+    transition: transform ease .3s; }
+  .NavigationMenu li.Active a:after {
+    transform: rotate(180deg); }
+  .NavigationMenu li.Cart .CartQuantify {
+    position: relative;
+    top: -2px;
+    text-align: center;
+    display: inline-block;
+    background-color: #212121;
+    color: white;
+    line-height: 20px;
+    width: 20px;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 12px; }
+
+.Navigation,
+.Navigation:before {
+  height: 85px; }
+  @media screen and (min-width: 768px) {
+    .Navigation,
+    .Navigation:before {
+      height: 105px; } }
+  @media screen and (min-width: 992px) {
+    .Navigation,
+    .Navigation:before {
+      height: 135px; } }
+  @media screen and (min-width: 1200px) {
+    .Navigation,
+    .Navigation:before {
+      height: 155px; } }
+
+.Navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100vw;
+  z-index: 20;
+  transition: transform ease .3s; }
+  .Navigation .NavigationWrapper {
+    height: 100%;
+    padding: 0 15px; }
+    @media screen and (min-width: 768px) {
+      .Navigation .NavigationWrapper {
+        padding: 0 35px; } }
+  .Navigation:before {
+    content: '';
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    z-index: 18;
+    transition: all ease .3s;
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.1);
+    opacity: 1; }
+    @media screen and (min-width: 768px) {
+      .Navigation:before {
+        opacity: 0; } }
+  .Navigation.ScrollOnTop:hover:before, .Navigation.Opened:before {
+    opacity: 1; }
+  .Navigation.ScrollOnTop:hover .NavigationMenu li > a, .Navigation.Opened .NavigationMenu li > a {
+    color: #212121; }
+  .Navigation.ScrollOnTop:hover .NavigationMenu li.NavigationSubmenu a:after, .Navigation.Opened .NavigationMenu li.NavigationSubmenu a:after {
+    background-image: url("../img/chevron-down.svg"); }
+  .Navigation.ScrollOnTop:hover .Brand a, .Navigation.Opened .Brand a {
+    background-image: url("../img/Logo_Preto.png"); }
+  .Navigation:not(.ScrollOnTop) {
+    height: 50px; }
+    @media screen and (min-width: 768px) {
+      .Navigation:not(.ScrollOnTop) {
+        height: 60px; } }
+    @media screen and (min-width: 992px) {
+      .Navigation:not(.ScrollOnTop) {
+        height: 80px; } }
+    @media screen and (min-width: 1200px) {
+      .Navigation:not(.ScrollOnTop) {
+        height: 90px; } }
+    .Navigation:not(.ScrollOnTop):before {
+      opacity: 1;
+      transform: translateY(-35px); }
+      @media screen and (min-width: 768px) {
+        .Navigation:not(.ScrollOnTop):before {
+          transform: translateY(-45px); } }
+      @media screen and (min-width: 992px) {
+        .Navigation:not(.ScrollOnTop):before {
+          transform: translateY(-55px); } }
+      @media screen and (min-width: 1200px) {
+        .Navigation:not(.ScrollOnTop):before {
+          transform: translateY(-65px); } }
+    .Navigation:not(.ScrollOnTop) .NavigationMenu li > a {
+      color: #212121; }
+    .Navigation:not(.ScrollOnTop) .NavigationMenu li.NavigationSubmenu a:after {
+      background-image: url("../img/chevron-down.svg"); }
+    .Navigation:not(.ScrollOnTop) .Brand a {
+      height: 90px;
+      background-image: url("../img/Logo_Preto_Reduzido.png"); }
+  @media screen and (max-width: 767px) {
+    .Navigation.ScrollDown {
+      transform: translateY(-80px); } }
+  .Navigation .NavigationSubLayer {
+    z-index: 17;
+    background-color: #EEE;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    transform: translateY(-100vh);
+    transform-origin: top;
+    transition: transform ease .5s;
+    max-height: 70vh;
+    min-height: 450px; }
+    .Navigation .NavigationSubLayer .NavigationMenu:not(.Active) {
+      display: none; }
+    .Navigation .NavigationSubLayer .SubMenuProducts {
+      max-width: 200px;
+      margin: 0 15px; }
+      .Navigation .NavigationSubLayer .SubMenuProducts a {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        line-height: 1.5em; }
+        .Navigation .NavigationSubLayer .SubMenuProducts a h3 {
+          margin: 10px 0 0; }
+  .Navigation.Opened .NavigationSubLayer {
+    transform: translateY(0); }
+    @media screen and (min-width: 1200px) {
+      .Navigation.Opened .NavigationSubLayer {
+        transform: translateY(50px); } }
+  .Navigation.Opened.ScrollOnTop .NavigationSubLayer {
+    transform: translateY(50px); }
+    @media screen and (min-width: 1200px) {
+      .Navigation.Opened.ScrollOnTop .NavigationSubLayer {
+        transform: translateY(100px); } }
+  .Navigation.Opened.Reopen .NavigationSubLayer {
+    transform: scaleY(0.1);
+    transition: transform ease-in .4s; }
+  .Navigation .NavigationLightBox.Active {
+    content: '';
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 16; }
+
+.Header {
+  position: relative;
+  background-image: url("../img/hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: black;
+  width: 100%;
+  height: calc(100vh - 40px);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white; }
+  .Header .HeaderWrapper {
+    max-width: 80%; }
+  .Header .HeaderTitle {
+    margin-top: 2em;
+    font-family: 'AkhandSoft';
+    text-transform: uppercase;
+    line-height: 1.2em;
+    letter-spacing: 0.14em;
+    font-size: 38px; }
+    @media screen and (min-width: 768px) {
+      .Header .HeaderTitle {
+        font-size: 42px; } }
+    @media screen and (min-width: 992px) {
+      .Header .HeaderTitle {
+        font-size: 52px; } }
+    @media screen and (min-width: 1200px) {
+      .Header .HeaderTitle {
+        font-size: 72px; } }
+  .Header .ButtonScrollDown {
+    position: absolute;
+    bottom: -20px; }
+    .Header .ButtonScrollDown .Icon {
+      background-color: white;
+      cursor: pointer;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%; }
+
+body {
+  color: #212121;
+  font-size: 14px; }
+
+.SubMenu ul {
+  justify-content: center; }
+  .SubMenu ul li {
+    margin: 0 10px;
+    max-width: 45%; }
+    .SubMenu ul li a {
+      text-transform: uppercase;
+      color: white;
+      font-family: "Nunito";
+      font-weight: normal;
+      text-decoration: none;
+      font-size: 16px;
+      line-height: 1em;
+      padding: 10px;
+      display: inline-block;
+      width: 200px;
+      max-width: 100%;
+      transition: color ease .3s;
+      position: relative;
+      z-index: 1; }
+      .SubMenu ul li a > * {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0; }
+      .SubMenu ul li a:before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: '';
+        width: 200px;
+        max-width: 100%;
+        height: 2px;
+        background-color: white;
+        display: inline-block;
+        transition: transform ease .3s;
+        z-index: -1;
+        transform-origin: bottom; }
+      .SubMenu ul li a:hover {
+        color: #212121; }
+        .SubMenu ul li a:hover:before {
+          transform: scaleY(18); }
+
+.SectionMosaic {
+  max-width: 100%; }
+  .SectionMosaic .Row {
+    width: 100%; }
+    @media screen and (min-width: 450px) {
+      .SectionMosaic .Row {
+        padding-right: 35px;
+        padding-left: 35px; } }
+    .SectionMosaic .Row .Column {
+      display: flex;
+      flex-wrap: wrap; }
+      @media screen and (min-width: 768px) {
+        .SectionMosaic .Row .Column {
+          width: 50%; } }
+      .SectionMosaic .Row .Column .BigBox {
+        width: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+        height: fit-content;
+        margin-bottom: -5px; }
+      .SectionMosaic .Row .Column .ContentWrapper {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: scale(0.7); }
+        @media screen and (min-width: 992px) {
+          .SectionMosaic .Row .Column .ContentWrapper {
+            transform: scale(0.9); } }
+        @media screen and (min-width: 1200px) {
+          .SectionMosaic .Row .Column .ContentWrapper {
+            transform: scale(1); } }
+        .SectionMosaic .Row .Column .ContentWrapper .Content {
+          max-width: 400px; }
+      .SectionMosaic .Row .Column .SmallBox {
+        width: 50%;
+        margin-bottom: -5px; }
+  .SectionMosaic h2 {
+    margin-top: 0;
+    font-size: 40px;
+    color: white; }
+
+.SectionGrid {
+  font-size: 18px;
+  color: #212121; }
+  .SectionGrid ul {
+    max-width: 768px; }
+    @media screen and (max-width: 449px) {
+      .SectionGrid ul {
+        flex-wrap: wrap; }
+        .SectionGrid ul li {
+          width: 50%; } }
+    .SectionGrid ul li {
+      transform: scale(0.7); }
+      @media screen and (min-width: 768px) {
+        .SectionGrid ul li {
+          transform: scale(1); } }
+    .SectionGrid ul img {
+      height: 80px;
+      width: auto; }
+
+.BannerContentText {
+  position: relative;
+    position-height: min-content;
+  margin-bottom: -5px; }
+  .BannerContentText .ContentWrapper {
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%; }
+
+@media screen and (min-width: 450px) {
+  .SectionBanners {
+    display: flex; } }
+
+body {
+  background-color: white; }
+
+.PageContent {
+  transition: filter 0.5s; }
+
+.mm-wrapper_blocking .PageContent {
+  filter: brightness(0.5); }
+
+.MenuMobile > ul a {
+  font-family: "AkhandSoft"; }
+
+.MenuMobile .mm-panels {
+  padding-top: 120px; }

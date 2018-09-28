@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>O Francês Gravataria</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:300,400,600,700%7COswald:300,400,500,700%7CNunito:200,300,400,600,700,800">
+	<link href="img/favicon.ico" rel="shortcut icon" type="image/icon">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/7.0.6/jquery.mmenu.all.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/7.0.6/jquery.mmenu.js"></script>
+</head>
+<body>
+	<nav class="Navigation ScrollOnTop">
+		<div class="NavigationWrapper Container Flex AICenter JCSpaceBetween">
+			<div class="MenuHamburger HideDesktop Flex AICenter">
+				<span class="HamburgerIcon"></span>
+			</div>
+			<ul class="NavigationMenu Flex FlexStart HideMobile">
+				<li class="NavigationMenuItem NavigationSubmenu" onclick="callSubmenu('#nav-sub-1', this)"><a>Gravatas</a></li>
+				<li class="NavigationMenuItem NavigationSubmenu" onclick="callSubmenu('#nav-sub-2', this)"><a>Acessórios</a></li>
+				<li class="NavigationMenuItem"><a href="#">Casamento</a></li>
+				<li class="NavigationMenuItem"><a href="#">Sobre</a></li>
+			</ul>
+			<div class="Brand">
+				<a href="#">
+					<h1>O Francês Gravataria</h1>
+				</a>
+			</div>
+			<ul class="NavigationMenu Flex FlexEnd HideMobile">
+				<li class="NavigationMenuItem"><a href="#">Loja</a></li>
+				<li class="NavigationMenuItem"><a href="#">Buscar</a></li>
+				<li class="NavigationMenuItem"><a href="#">Minha conta</a></li>
+				<li class="NavigationMenuItem Cart"><a href="#" class="CartLink">Carrinho <span class="CartQuantify">0</span></a></li>
+			</ul>
+			<ul class="NavigationMenu Flex FlexEnd HideDesktop">
+				<li class="NavigationMenuItem Cart"><a href="#" class="CartLink">Carrinho <span class="CartQuantify">0</span></a></li>
+			</ul>
+		</div>
+		<div class="NavigationLightBox" onclick="disableMenuSubLayer()"></div>
+		<div class="NavigationSubLayer Section Flex AICenter JCCenter HideMobile">
+			<nav class="Container PH35 TextCenter">
+				<ul id="nav-sub-1" class="Flex JCCenter NavigationMenu">
+					<li class="SubMenuProducts">
+						<a href="#">
+							<img data-src="img/Produtos_Slim.png" alt="Gravata Slim e Regular">
+							<h3>Gravata Slim e Regular</h3>
+						</a>
+					</li>
+					<li class="SubMenuProducts">
+						<a href="#">
+							<img data-src="img/Produtos_Borboleta.png" alt="Gravata Borboleta">
+							<h3>Gravata Borboleta</h3>
+						</a>
+					</li>
+					<li class="SubMenuProducts">
+						<a href="#">
+							<img data-src="img/Produtos_Borboleta_kids.png" alt="Linha Kids">
+							<h3>Linha Kids</h3>
+						</a>
+					</li>
+				</ul>
+				<ul id="nav-sub-2" class="Flex JCCenter NavigationMenu">
+					<li class="SubMenuProducts">
+						<a href="#">
+							<img data-src="img/Produtos_Suspensorio.png" alt="Suspensório">
+							<h3>Suspensório</h3>
+						</a>
+					</li>
+					<li class="SubMenuProducts">
+						<a href="#">
+							<img data-src="img/Produtos_meia.png" alt="Meia">
+							<h3>Meia</h3>
+						</a>
+					</li>
+					<li class="SubMenuProducts">
+						<a href="#">
+							<img data-src="img/Produtos_Lenco_de_bolso.png" alt="Lenço de bolço">
+							<h3>Lenço de bolço</h3>
+						</a>
+					</li>
+					<li class="SubMenuProducts">
+						<a href="#">
+							<img data-src="img/Produtos_Prendedor.png" alt="Prendedor">
+							<h3>Prendedor</h3>
+						</a>
+					</li>
+					<li class="SubMenuProducts">
+						<a href="#">
+							<img data-src="img/Produtos_Pin_de_lapela.png" alt="Pin de lapela">
+							<h3>Pin de lapela</h3>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</nav>
+	<div class="PageContent">
+		<div class="PageWrapper">
+			<header class="Header">
+				<div class="HeaderWrapper Container TextCenter">
+					<h1 class="HeaderTitle">Um novo jeito de pensar em gravataria</h1>
+					<nav class="SubMenu">
+						<ul>
+							<li><a href=""><h3>Gravatas</h3></a></li>
+							<li><a href=""><h3>Acessórios</h3></a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="ButtonScrollDown" onclick="scrollToElement('main', -40);">
+					<div class="Icon Flex JCCenter AICenter">
+						<img src="img/chevron-down.svg">
+					</div>
+				</div>
+			</header>
+			<main class="Main">
+				<section class="Container Section SectionText">
+					<p class="TextBig TextCenter PH35">
+						O FRANCÊS PROPÕE UM NOVO OLHAR PARA A GRAVATARIA.<br/> 
+						ESCOLHEMOS COM CUIDADO CADA DETALHE, PRODUZINDO NACIONALMENTE O QUE HÁ DE MAIS BACANA NO MUNDO DA GRAVATARIA. FUNDINDO A ESSÊNCIA DA ALTA COSTURA COM A GRAVATA FEITA À MÃO E A CONSTANTE BUSCA POR INOVAÇÃO.
+					</p>
+				</section>
+				<section class="SectionMosaic TextCenter">
+					<div class="Row Container">
+						<div class="Column">
+							<div class="BigBox">
+								<div class="ContentWrapper Flex AICenter JCCenter">
+									<div class="Content">
+										<h2 class="FontDisplay">A VIDA É MUITO CURTA PARA USAR GRAVATAS CHATAS</h2>
+										<nav class="SubMenu">
+											<ul>
+												<li><a href=""><h3>SLIM</h3></a></li>
+												<li><a href=""><h3>Borboleta</h3></a></li>
+											</ul>
+										</nav>
+									</div>
+								</div>
+								<img data-src="img/Box_1000x1000_gravatasA.jpg" alt="Gravatas" />
+							</div>
+							<div class="SmallBox">
+								<img data-src="img/ofrancesgravataria_suspensorio_500x500.gif" alt="Gravata borboleta" />
+							</div>
+							<div class="SmallBox">
+								<img data-src="img/Box_500x500_borboleta.jpg" alt="Suspensório">
+							</div>
+						</div>
+						<div class="Column">
+							<div class="SmallBox">
+								<img data-src="img/ofrancesgravataria_borboleta_500x500.gif" alt="Gravata borboleta" />
+							</div>
+							<div class="SmallBox">
+								<img data-src="img/Box_500x500_slim.jpg" alt="Gravatas">
+							</div>
+							<div class="BigBox">
+								<div class="ContentWrapper Flex AICenter JCCenter">
+									<div class="Content">
+										<h2 class="FontDisplay">DETALHES QUE FAZEM TODA A DIFERENÇA</h2>
+										<nav class="SubMenu">
+											<ul>
+												<li><a href=""><h3>Suspensório</h3></a></li>
+												<li><a href=""><h3>Lenço de bolso</h3></a></li>
+											</ul>
+										</nav>
+									</div>
+								</div>
+								<img data-src="img/Box_1000x1000_acesoriosA.jpg" alt="Acessórios" />
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="Container SectionGrid Section">
+					<ul class="PH35 Flex JCSpaceBetween Container AICenter TextCenter TextUppercase FontDisplay">
+						<li>
+							<img data-src="img/inovacao-black.svg" alt="Inovação">
+							<h3>Inovação</h3>
+						</li>
+						<li>
+							<img data-src="img/feito-a-mao-black.svg" alt="Feito à mão">
+							<h3>Feito à mão</h3>
+						</li>
+						<li>
+							<img data-src="img/feito-no-brasil-black.svg" alt="Feito no Brasil">
+							<h3>Feito no Brasil</h3>
+						</li>
+						<li>
+							<img data-src="img/comercio-justo-black.svg" alt="Comércio justo">
+							<h3>Comércio justo</h3>
+						</li>
+					</ul>
+				</section>
+				<section class="PH35 SectionBanners Container TextCenter">
+					<div class="BannerContentText">
+						<img data-src="img/Banner_533x450_Guia_de_Estilo.jpg" alt="Guia de Estilo">
+						<a href="#" class="ContentWrapper Flex JCCenter AICenter">
+							<h3 class="ColorWhite M0 FontDisplay FS40">Guia de<br/>Estilo</h3>
+						</a>
+					</div>
+					<div class="BannerContentText">
+						<img data-src="img/Banner_533x450_Presenteie.jpg" alt="Presenteie">
+						<a href="#" class="ContentWrapper Flex JCCenter AICenter">
+							<h3 class="ColorWhite M0 FontDisplay FS40">Presenteie</h3>
+						</a>
+					</div>
+					<div class="BannerContentText">
+						<img data-src="img/Banner_533x450_Instagram.jpg" alt="Instagram">
+						<a href="#" class="ContentWrapper Flex JCCenter AICenter">
+							<h3 class="ColorWhite M0 FontDisplay FS40">Instagram</h3>
+						</a>
+					</div>
+				</section>
+				<div class="Spacer P35"></div>
+			</main>
+		</div>
+	</div>
+		<nav class="MenuMobile HideDesktop" style="top: 80px;">
+		<ul class="FontDisplay">
+			<li class="search"><form action="" class="form-search" role="sarch"><input type="search" name="q" autocomplete="off" placeholder="Procurar por..."></label></form></li>
+			<li><a href="#">Gravatas</a>
+				<ul>
+					<li><a href="#">Gravata Slim e Regular</a></li>
+					<li><a href="#">Gravata Borboleta</a></li>
+					<li><a href="#">Linha Kids</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Acessórios</a>
+				<ul>
+					<li><a href="#">Suspensório</a></li>
+					<li><a href="#">Meia</a></li>
+					<li><a href="#">Lenço de bolso</a></li>
+					<li><a href="#">Prendedor</a></li>
+					<li><a href="#">Pin de lapela</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Casamento</a></li>
+			<li><a href="#">Sobre</a></li>
+		</ul>
+	</nav>
+	<script src="js/app.js"></script>
+	</script>
+</body>
+</html>
